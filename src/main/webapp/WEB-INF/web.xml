@@ -8,7 +8,7 @@
   <display-name>SpringMVC</display-name>
   <!-- 设置欢迎页面 QQ:1409232611微信：byc6352-->
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index2.jsp</welcome-file>
   </welcome-file-list>
 
   	<!-- 字符集 过滤器  -->

@@ -17,7 +17,7 @@ public class JDBCUtil {
 	 
 	 public static Connection getConn(){
 		 //PropertiesUtil.loadFile("jdbc.properties");
-		 PropertiesUtil.loadFile("com/tlink/config/jdbc.properties");
+		 PropertiesUtil.loadFile("config/jdbc.properties");
 		 String driver = PropertiesUtil.getPropertyValue("driver");
 		 String url = PropertiesUtil.getPropertyValue("url");
 		 String username  = PropertiesUtil.getPropertyValue("username");

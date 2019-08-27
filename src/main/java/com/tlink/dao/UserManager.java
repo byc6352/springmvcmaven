@@ -15,7 +15,7 @@ import com.tlink.utils.JDBCUtil;
  *
  */
 public class UserManager {
-	private static String getPasswordByUserName(String loginName) {
+	public static String getPasswordByUserName(String loginName) {
 		String sql = "select login_pwd from all_user where login_name = " +"'" + loginName+"'";
 		Connection conn = JDBCUtil.getConn();
 		Statement stmt=null; 

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,12 +34,21 @@ public class TestController {
 		return new ModelAndView(new MappingJackson2JsonView(), map);
 	}
 
-	@RequestMapping(value="/login", produces = "application/json;charset=UTF-8")
+	@RequestMapping(value="/login3", produces = "application/json;charset=UTF-8")
 	public @ResponseBody
-	String userLogin(String uname,String upwd){
+	String userLogin3(String uname,String upwd){
 		boolean result = true;
 		String resultString = "{\"result\":true}";
-		System.out.println("添加操11作的业务逻辑test:"+uname+" "+upwd);
+		System.out.println("添加操11作的业务逻辑test:"+uname+" "+upwd); 
+		//return "success";
+		return resultString;
+	}
+	@PostMapping(value="/login.htm", produces = "application/json;charset=UTF-8")
+	public @ResponseBody
+	String userLogin(String loginAccount,String loginPassword){
+		boolean result = true;
+		String resultString = "{\"result\":true}";
+		System.out.println("添加操11作的业务逻辑:"+loginAccount+" "+loginPassword); 
 		//return "success";
 		return resultString;
 	}
