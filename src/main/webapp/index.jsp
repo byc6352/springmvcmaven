@@ -6,10 +6,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="aaa/add" method="get">
+	<form action="user/login" method="get">
 		<input type="text" name="uname"/><br/>
 		<input type="text" name="upwd"/><br/>
-		<input type="submit" value="添加"/>
+		<input type="submit" value="确定"/>
 	</form>
 </body>
 </html>
