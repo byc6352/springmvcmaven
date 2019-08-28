@@ -20,7 +20,7 @@ public class TestController {
 
 	@RequestMapping(value="/login1")
 	public String add(String uname,String upwd){
-		System.out.println("Ìí¼Ó²Ù×÷µÄÒµÎñÂß¼­test:"+uname+" "+upwd);
+		//System.out.println("ç™»é™†ï¼š"+loginAccount+" "+loginPassword); 
 		return "success";
 	}
 	
@@ -29,7 +29,7 @@ public class TestController {
 		boolean result = true;
 		Map<String, Boolean> map = new HashMap<>();
 		map.put("valid", result);
-		System.out.println("Ìí¼Ó²Ù×÷µÄÒµÎñÂß¼­test:"+uname+" "+upwd);
+		//System.out.println("ç™»é™†ï¼š"+loginAccount+" "+loginPassword); 
 		//return "success";
 		return new ModelAndView(new MappingJackson2JsonView(), map);
 	}
@@ -39,18 +39,26 @@ public class TestController {
 	String userLogin3(String uname,String upwd){
 		boolean result = true;
 		String resultString = "{\"result\":true}";
-		System.out.println("Ìí¼Ó²Ù11×÷µÄÒµÎñÂß¼­test:"+uname+" "+upwd); 
+		//System.out.println("ç™»é™†ï¼š"+loginAccount+" "+loginPassword); 
 		//return "success";
 		return resultString;
 	}
-	@PostMapping(value="/login.htm", produces = "application/json;charset=UTF-8")
+	@PostMapping(value="/login4", produces = "application/json;charset=UTF-8")
 	public @ResponseBody
+	String userLogin4(String loginAccount,String loginPassword){
+		boolean result = true;
+		String resultString = "{\"result\":true}";
+		System.out.println("ç™»é™†ï¼š"+loginAccount+" "+loginPassword); 
+		//return "success";
+		return resultString;
+	}
+	@PostMapping(value="/login", produces = "application/json;charset=UTF-8")
+	public
 	String userLogin(String loginAccount,String loginPassword){
 		boolean result = true;
 		String resultString = "{\"result\":true}";
-		System.out.println("Ìí¼Ó²Ù11×÷µÄÒµÎñÂß¼­:"+loginAccount+" "+loginPassword); 
-		//return "success";
-		return resultString;
+		System.out.println("ç™»é™†ï¼š"+loginAccount+" "+loginPassword); 
+		return "success";
 	}
 	
 }
