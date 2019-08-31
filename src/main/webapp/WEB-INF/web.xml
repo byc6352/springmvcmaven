@@ -8,7 +8,7 @@
   <display-name>SpringMVC</display-name>
   <!-- 设置欢迎页面 QQ:1409232611微信：byc6352-->
   <welcome-file-list>
-    <welcome-file>/pages/index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
   </welcome-file-list>
 
   	<!-- 字符集 过滤器  -->
@@ -52,8 +52,12 @@
   </servlet-mapping>
  <servlet-mapping>
     <servlet-name>default</servlet-name>
+    <url-pattern>*.htm</url-pattern>
+</servlet-mapping>  
+ <servlet-mapping>
+    <servlet-name>default</servlet-name>
     <url-pattern>*.html</url-pattern>
-</servlet-mapping>   
+</servlet-mapping>  
  <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>*.jpg</url-pattern>

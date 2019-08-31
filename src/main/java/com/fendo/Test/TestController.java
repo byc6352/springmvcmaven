@@ -52,13 +52,29 @@ public class TestController {
 		//return "success";
 		return resultString;
 	}
-	@PostMapping(value="/login", produces = "application/json;charset=UTF-8")
-	public
+	@PostMapping(value="/login5.do", produces = "application/json;charset=UTF-8")
+	public @ResponseBody
+	ModelAndView userLogin5(String loginAccount,String loginPassword){
+		boolean result = true;
+		//String resultString = "{\"result\":true}";
+		Map<String, String> map = new HashMap<>();
+		map.put("flag", "00");
+		map.put("url", "http://localhost:8080/user/userIndex.htm");
+		map.put("msg", "登陆成功！");
+		System.out.println("登陆："+loginAccount+" "+loginPassword); 
+		return new ModelAndView(new MappingJackson2JsonView(), map);
+	}
+	@PostMapping(value="/login.do", produces = "application/json;charset=UTF-8")
+	public @ResponseBody
 	String userLogin(String loginAccount,String loginPassword){
 		boolean result = true;
-		String resultString = "{\"result\":true}";
+		String resultString = "{\"flag\":\"00\",\"url\":\"http://localhost:8080/user/userIndex.htm\"}";
+		//Map<String, String> map = new HashMap<>();
+		//map.put("flag", "00");
+		//map.put("url", "http://localhost:8080/user/userIndex.htm");
+		//map.put("msg", "登陆成功！");
 		System.out.println("登陆："+loginAccount+" "+loginPassword); 
-		return "success";
+		return resultString;
 	}
 	
 }
