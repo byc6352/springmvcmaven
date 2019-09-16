@@ -64,17 +64,50 @@ public class TestController {
 		System.out.println("登陆："+loginAccount+" "+loginPassword); 
 		return new ModelAndView(new MappingJackson2JsonView(), map);
 	}
-	@PostMapping(value="/login.do", produces = "application/json;charset=UTF-8")
+	@RequestMapping(value="/login.do", produces = "application/json;charset=UTF-8",method=RequestMethod.GET)
 	public @ResponseBody
-	String userLogin(String loginAccount,String loginPassword){
-		boolean result = true;
-		String resultString = "{\"flag\":\"00\",\"url\":\"http://localhost:8080/user/userIndex.htm\"}";
+	ModelAndView userLogin1(String loginAccount,String loginPassword){
+		//boolean result = true;
+		//String resultString = "{\"flag\":\"00\",\"url\":\"http://localhost:8080/user/userIndex.htm\"}";
 		//Map<String, String> map = new HashMap<>();
 		//map.put("flag", "00");
 		//map.put("url", "http://localhost:8080/user/userIndex.htm");
 		//map.put("msg", "登陆成功！");
-		System.out.println("登陆："+loginAccount+" "+loginPassword); 
-		return resultString;
+		//System.out.println("登陆："+loginAccount+" "+loginPassword); 
+		//return resultString;
+		Map<String, String> map = new HashMap<>();
+		map.put("flag", "00");
+		map.put("url", "http://localhost:8080/user/userIndex.htm");
+		map.put("msg", "登陆成功！");
+		map.put("loginAccount", loginAccount);
+		map.put("loginPassword", loginPassword);
+		if(loginAccount!=null &&loginPassword!=null)
+			System.out.println("登陆："+loginAccount+" "+loginPassword); 
+		else
+			System.out.println("获取数据失败！"); 
+		return new ModelAndView(new MappingJackson2JsonView(), map);
 	}
-	
+	@PostMapping(value="/login.do", produces = "application/json;charset=UTF-8")
+	public @ResponseBody
+	ModelAndView userLogin(String loginAccount,String loginPassword){
+		//boolean result = true;,method=RequestMethod.POST
+		//String resultString = "{\"flag\":\"00\",\"url\":\"http://localhost:8080/user/userIndex.htm\"}";
+		//Map<String, String> map = new HashMap<>();
+		//map.put("flag", "00");
+		//map.put("url", "http://localhost:8080/user/userIndex.htm");
+		//map.put("msg", "登陆成功！");
+		//System.out.println("登陆："+loginAccount+" "+loginPassword); 
+		//return resultString;
+		Map<String, String> map = new HashMap<>();
+		map.put("flag", "00");
+		map.put("url", "http://localhost:8080/user/userIndex.htm");
+		map.put("msg", "登陆成功！");
+		map.put("loginAccount", loginAccount);
+		map.put("loginPassword", loginPassword);
+		if(loginAccount!=null &&loginPassword!=null)
+			System.out.println("登陆："+loginAccount+" "+loginPassword); 
+		else
+			System.out.println("获取数据失败！"); 
+		return new ModelAndView(new MappingJackson2JsonView(), map);
+	}
 }
